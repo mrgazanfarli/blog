@@ -15,7 +15,7 @@ const PostDetails = props => {
     const loadPosts = async () => {
         try {
             const response = await postApi.getOne(postId)
-            setPost(response.data[0]);
+            setPost(response.data);
             setPostLoaded(true);
         } catch (error) {
             setPost(null);
@@ -34,7 +34,7 @@ const PostDetails = props => {
                     <div className="card shadow p-2 mb-3">
                         <div className="card-body">
                             <h3 className="card-title text-info mb-4">{post.title}</h3>
-                            <p className="card-text">{post.body.substring(0, 200)}</p>
+                            <p className="card-text">{post.body}</p>
                         </div>
                     </div>
                 )

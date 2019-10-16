@@ -9,11 +9,8 @@ const getAll = () => {
 
 const getOne = (id) => {
     return axios({
-        url: 'https://jsonplaceholder.typicode.com/posts/',
-        method: 'get',
-        params: {
-            id: id
-        }
+        url: `https://jsonplaceholder.typicode.com/posts/${id}`,
+        method: 'get'
     })
 }
 

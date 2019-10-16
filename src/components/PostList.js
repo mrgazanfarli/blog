@@ -1,9 +1,4 @@
 import React from 'react';
-import {
-    Link,
-    useRouteMatch,
-    useParams
-} from 'react-router-dom';
 
 import * as post from '../apis/post';
 import Preloader from './Preloader';

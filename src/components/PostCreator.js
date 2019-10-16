@@ -67,6 +67,7 @@ class PostCreator extends React.Component {
 
     render() {
         let { message, requestSucceeded } = this.state;
+        let disabled = requestSucceeded === null ? true : false;
         return (
             <div>
                 <h3 className="text-center text-info">Add post</h3>
@@ -81,7 +82,7 @@ class PostCreator extends React.Component {
                     <div className="form-group">
                         <label>Title</label>
                         <input
-                            disabled={requestSucceeded === null ? true : false}
+                            disabled={disabled}
                             type="text"
                             value={this.state.title}
                             name="title"
@@ -92,7 +93,7 @@ class PostCreator extends React.Component {
                     <div className="form-group">
                         <label>Body</label>
                         <textarea
-                            disabled={requestSucceeded === null ? true : false}
+                            disabled={disabled}
                             className="form-control"
                             value={this.state.body}
                             name="body"
@@ -103,7 +104,7 @@ class PostCreator extends React.Component {
                     <button
                         type="submit"
                         className="btn btn-primary px-4"
-                        disabled={requestSucceeded === null ? true : false}>Add</button>
+                        disabled={disabled}>Add</button>
                 </form>
             </div>
         )
